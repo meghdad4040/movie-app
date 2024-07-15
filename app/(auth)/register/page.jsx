@@ -1,8 +1,9 @@
 "use client"
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
@@ -14,6 +15,10 @@ export default function Auth() {
  const [creatingUser, setCreatingUser] = useState(false);
  const [userCreated, setUserCreated] = useState(false);
  const [error, setError] = useState(false);
+ const session = useSession()
+ const router = useRouter()
+ const { status } = session
+
 
  const handelFormSubmit = async e => {
   e.preventDefault();
@@ -31,6 +36,10 @@ export default function Auth() {
    setError(true);
   }
  };
+
+ if (status === "authenticated") {
+  router.push("/")
+ }
 
  return <>
   {/* <div className=" container">
@@ -65,7 +74,7 @@ export default function Auth() {
     </div>
    )}
    <form
-    className=' flex flex-col gap-1 mx-auto'
+    className=' w-[25rem] dark:bg-white/5 bg-black/35 rounded-xl p-6 flex flex-col gap-1 mx-auto'
     onSubmit={handelFormSubmit}>
     <input
      value={name}
@@ -96,12 +105,12 @@ export default function Auth() {
      type='submit'>
      Register
     </button>
-    <div className=' my-4 text-center text-gray-500'>-------------- or login with provider --------------</div>
+    <div className=' my-4 text-center text-gray-700 dark:text-gray-300'>------------ or login with provider ------------</div>
     <button
      onClick={() => signIn("google", { callbackUrl: "/" })}
      className=' flex gap-4 justify-center items-center'>
      <Image
-      src={"/img/noimage.jpg"}
+      src={"/img/google.png"}
       alt={"google icon"}
       width={28}
       height={28}
@@ -113,17 +122,17 @@ export default function Auth() {
      onClick={() => signIn("github", { callbackUrl: "/" })}
      className=' flex gap-4 justify-center items-center'>
      <Image
-      src={"/img/noimage.jpg"}
+      src={"/img/github.png"}
       alt={"google icon"}
       width={28}
       height={28}
      />
      Login with github
     </button>
-    <div className=' text-center my-4 text-gray-500 border-t pt-4 border-gray-300'>
+    <div className=' text-center my-4 text-gray-700 dark:text-gray-300 border-t pt-4 border-gray-800 dark:border-gray-300'>
      Existing account?{" "}
      <Link
-      className=' underline'
+      className='  dark:text-amber-200 text-gray-800 underline'
       href={"/login"}>
       Login here &raquo;
      </Link>

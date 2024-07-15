@@ -406,7 +406,7 @@ button {
 	width: 300px;
 	height: 100vh;
 	padding: 1rem 3rem;
-	background-color: rgb(15, 18, 28);
+	/* background-color: rgb(15, 18, 28); */
 	color: #fff;
 	z-index: 99999;
 	box-shadow: 0 0 10px #000;
@@ -944,7 +944,7 @@ button {
 .moviecard {
 	width: 100%;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	gap: 1rem;
 	box-shadow: 0 0px 10px #d1d1d1;
 	border-radius: 10px;
@@ -1744,4 +1744,72 @@ button {
 }
 .fill-base-100 {
 	fill: var(--fallback-b1, oklch(var(--b1) / 1));
+}
+
+form > input[type="email"],
+form > input[type="tel"],
+form > input[type="password"],
+form > input[type="text"],
+form > select {
+	@apply block w-full rounded-xl focus:outline-best focus:outline dark:focus:outline-darkBest focus:border-0;
+	@apply border p-2 !border-[#01196E] bg-gray-200 text-gray-500 dark:bg-slate-500 dark:border-gray-800 dark:text-gray-800 outline-none;
+}
+
+form > input[type="email"]:disabled,
+form > input[type="tel"]:disabled,
+form > input[type="password"]:disabled,
+form > input[type="text"]:disabled {
+	@apply bg-gray-300 text-gray-400  cursor-not-allowed dark:bg-slate-500 dark:text-gray-700;
+}
+form > button,
+form > button {
+	@apply block w-full text-gray-700 font-semibold;
+	@apply border text-slate-950 dark:text-gray-200 border-violet-600 rounded-xl px-6 py-1 hover:bg-[#01196E] hover:text-white dark:hover:text-black transition-all dark:border-gray-400;
+}
+.rgb-button {
+	background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+	background-size: 600% 600%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.btn {
+	padding: 17px 40px;
+	border-radius: 50px;
+	cursor: pointer;
+	color: #000;
+	border: 0;
+	background-color: rgb(224, 223, 223);
+	box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	font-size: 15px;
+	transition: all 0.5s ease;
+}
+
+.btn:hover {
+	letter-spacing: 3px;
+	background-color: hsl(261deg 80% 48%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.btn:active {
+	letter-spacing: 3px;
+	background-color: hsl(261deg 80% 48%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+	transform: translateY(10px);
+	transition: 100ms;
 }

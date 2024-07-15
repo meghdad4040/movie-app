@@ -10,6 +10,8 @@ import { CgProfile } from "react-icons/cg";
 import { FaSignInAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { FaSignOutAlt } from "react-icons/fa";
+
 
 export default function Aside() {
 
@@ -33,7 +35,7 @@ export default function Aside() {
 
 
  return <>
-  <div className=" aside">
+  <div className=" aside bg-[#01196E] dark:bg-[rgb(15,18,28)]">
    <div className=" logo flex">
     <BiCameraMovie />
     <Link href="/"><h1>MOVIES</h1></Link>
@@ -46,8 +48,24 @@ export default function Aside() {
    </ul>
    <h3 className=" mt-2">Account Pages</h3>
    <ul className=" mt-2">
-    <Link href="/profile" className={activelink === "/profile" ? "active" : ""} onClick={() => handleLinkClick("/profile")}><li><div><CgProfile /></div>Profile</li></Link>
-    <Link href="/auth" className={activelink === "/auth" ? "active" : ""} onClick={() => handleLinkClick("/auth")}><li><div><FaSignInAlt /></div>SignIn</li></Link>
+    <Link href="/profile" className={activelink === "/profile" ? "active" : ""} onClick={() => handleLinkClick("/profile")}>
+     <li>
+      <div><CgProfile /></div>
+      Profile
+     </li>
+    </Link>
+    <Link href="/register" className={activelink === "/register" ? "active" : ""} onClick={() => handleLinkClick("/register")}>
+     <li>
+      <div><FaSignInAlt /></div>
+      SignIn
+     </li>
+    </Link>
+    <Link href="/signout" className={activelink === "/signout" ? "active" : ""} onClick={() => handleLinkClick("/signout")}>
+     <li>
+      <div><FaSignOutAlt /></div>
+      SignOut
+     </li>
+    </Link>
    </ul>
   </div>
  </>

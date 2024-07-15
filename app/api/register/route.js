@@ -1,6 +1,6 @@
+import { connectToDb } from "@/lib/mongoose";
+import { User } from "@/models/User";
 import { NextResponse } from "next/server";
-import { User } from "../../models/user";
-import { connectToDb } from "@/libs/connect";
 const bcrypt = require('bcryptjs');
 
 

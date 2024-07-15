@@ -9,9 +9,12 @@ import { GrLanguage } from "react-icons/gr";
 import { PiNoteFill } from "react-icons/pi";
 import { MdNotificationAdd } from "react-icons/md";
 import ChangeTheme from "./change-theme";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
 
+ const session = useSession()
+ console.log("session", session)
  // fetch data from api
  const { alldata, loading } = useFetchData("/api/getmovies")
 

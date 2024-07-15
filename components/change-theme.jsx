@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 const ChangeTheme = () => {
  const { systemTheme, theme, setTheme } = useTheme();
  const currentTheme = theme === "system" ? systemTheme : theme;
- const [mounted, setMounted] = useState(false);
+ const [mounted, setMounted] = useState(true);
 
  const changeThemeHandler = () => {
   if (!mounted) return null;
-  if (currentTheme === "light") {
-   return setTheme("dark");
-  } else {
+  if (currentTheme === "dark") {
    return setTheme("light");
+  } else {
+   return setTheme("dark");
   }
  };
  useEffect(() => {
@@ -30,7 +30,7 @@ const ChangeTheme = () => {
     onClick={changeThemeHandler}
     type='checkbox'
     value='synthwave'
-    className='toggle  theme-controller bg-yellow-400 dark:bg-gray-400  row-start-1 col-start-1 col-span-2'
+    className='toggle  theme-controller dark:bg-yellow-400 bg-gray-400  row-start-1 col-start-1 col-span-2'
    />
    <svg
     className='col-start-1 row-start-1 stroke-base-100 fill-base-100'
