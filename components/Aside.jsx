@@ -35,20 +35,54 @@ export default function Aside() {
 
 
  return <>
-  <div className=" aside bg-[#01196E] dark:bg-[rgb(15,18,28)]">
+  <div className=" aside -translate-x-[20rem] md:translate-x-0 bg-[#01196E] dark:bg-[rgb(15,18,28)]">
    <div className=" logo flex">
     <BiCameraMovie />
     <Link href="/"><h1>MOVIES</h1></Link>
    </div>
    <ul className=" mt-2">
-    <Link href="/" className={activelink === "/" ? "active" : ""} onClick={() => handleLinkClick("/")}><li><div><IoHome /></div>Dashboard</li></Link>
-    <Link href="/movies" className={activelink === "/movies" ? "active" : ""} onClick={() => handleLinkClick("/movies")}><li><div><RiMovieLine /></div>Movies</li></Link>
-    <Link href="/addmovie" className={activelink === "/addmovie" ? "active" : ""} onClick={() => handleLinkClick("/addmovie")}><li><div><RiAddBoxLine /></div>Add</li></Link>
-    <Link href="/draft" className={activelink === "/draft" ? "active" : ""} onClick={() => handleLinkClick("/draft")}><li><div><RiDraftLine /></div>Draft</li></Link>
+    <Link href="/"
+     className={activelink === "/" ? "active" : ""}
+     onClick={() => handleLinkClick("/")}>
+     <li>
+      <div>
+       <IoHome />
+      </div>Dashboard
+     </li>
+    </Link>
+    <Link href="/movies"
+     className={activelink === "/movies" ? "active" : ""}
+     onClick={() => handleLinkClick("/movies")}>
+     <li>
+      <div>
+       <RiMovieLine />
+      </div>Movies
+     </li>
+    </Link>
+    <Link href="/addmovie"
+     className={activelink === "/addmovie" ? "active" : ""}
+     onClick={() => handleLinkClick("/addmovie")}>
+     <li>
+      <div>
+       <RiAddBoxLine />
+      </div>Add
+     </li>
+    </Link>
+    <Link href="/draft"
+     className={activelink === "/draft" ? "active" : ""}
+     onClick={() => handleLinkClick("/draft")}>
+     <li>
+      <div>
+       <RiDraftLine />
+      </div>Draft
+     </li>
+    </Link>
    </ul>
    <h3 className=" mt-2">Account Pages</h3>
    <ul className=" mt-2">
-    <Link href="/profile" className={activelink === "/profile" ? "active" : ""} onClick={() => handleLinkClick("/profile")}>
+    <Link href="/profile"
+     className={activelink === "/profile" ? "active" : ""}
+     onClick={() => handleLinkClick("/profile")}>
      <li>
       <div><CgProfile /></div>
       Profile

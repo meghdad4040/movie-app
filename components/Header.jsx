@@ -37,12 +37,12 @@ export default function Header() {
  const filteredMovies = searchQuery.trim() === "" ? publishedMovies : publishedMovies.filter(movie => movie.title.toLowerCase().includes(searchQuery.toLowerCase()))
 
  return <>
-  <header className=" header">
-   <div className="flex flex-sb">
-    <div className=" headerbar">
-     <FaBars />
+  <header className=" header ">
+   <div className="flex">
+    <div >
+     <ChangeTheme />
     </div>
-    <div className=" searchheaderinput">
+    <div className=" searchheaderinput flex-1 mx-2">
      <input type="text"
       placeholder="Search movies here"
       value={searchQuery}
@@ -50,14 +50,13 @@ export default function Header() {
       readOnly
      />
     </div>
-    <ul className="flex gap-2">
+    <ul className=" hidden lg:flex items-center gap-1 mx-5">
      <Link href="/"><li><GrWindows /></li></Link>
      <Link href="/"><li><GrLanguage /></li></Link>
      <Link href="/"><li><MdNotificationAdd /></li></Link>
      <Link href="/"><li><PiNoteFill /></li></Link>
-     <ChangeTheme />
-     <Link href="/"><li><img src="/img/user.png" alt="user" /></li></Link>
     </ul>
+    <Link href="/"><li><img src={session?.data?.user.image || "/img/user.png"} alt="user" /></li></Link>
    </div>
    {opensearch && (
     <div className=" fixedsearchq">

@@ -1,8 +1,6 @@
 "use client"
 
-
 import axios from "axios";
-import Head from "next/head"
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -35,11 +33,7 @@ export default function DeleteProduct() {
 
 
  return <>
-
-  <Head>
-   <title>Update Website</title>
-  </Head>
-  <div className=" blogpage container">
+  <div className=" blogpage containerr  md:ml-80">
    <div className=" titledashboard  flex flex-sb">
     <div className=" mb-2">
      <h2>Delete Movie: <span>{movieInfo?.title}</span></h2>

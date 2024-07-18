@@ -15,9 +15,15 @@ const Page = () => {
  }
 
  return (
-  <div className="loginbox  container ">
-   <div className=" w-[25rem] h-[15rem] dark:bg-white/5 bg-white/15 shadow-2xl rounded-xl p-6 flex flex-col gap-1 mx-auto items-center justify-center">
-    <p className=" dark:text-gray-400"> Signed in as: </p> <span className=" text-xl">{session?.data?.user?.name}</span>  <br />
+  <div className="loginbox containerr md:ml-80 ">
+   <div className=" md:max-w-[25rem] md:h-[15rem] dark:bg-white/5 bg-white/15 shadow-2xl rounded-xl p-6 flex flex-col gap-1 mx-auto ">
+    <p className=" dark:text-gray-400">
+     Signed in as:
+    </p>
+    <span className=" text-xl">
+     {session?.data?.user?.name}
+    </span>
+    <br />
     <button className="btn" onClick={() => signOut()}>Sign out</button>
    </div>
   </div>

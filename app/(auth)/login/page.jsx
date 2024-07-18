@@ -29,13 +29,11 @@ const LoginPage = () => {
  }
 
  return (
-  <section className='loginbox container '>
-   <h1 className=' text-center text-best text-4xl mb-4'>Login</h1>
-   <form
-    className=' w-[25rem] dark:bg-white/5 bg-black/35 rounded-xl p-6 flex flex-col gap-1 mx-auto'
+  <section className='loginbox containerr md:ml-80'>
+   <h1 className='text-center text-best text-4xl mb-4'>Login</h1>
+   <form className='text-xs lg:text-base max-w-[25rem] dark:bg-white/5 bg-black/35 rounded-xl p-6 flex flex-col gap-1 mx-auto'
     onSubmit={handleSubmitForm}>
-    <input
-     id="email"
+    <input id="email"
      name='email'
      value={email}
      disabled={loginInProgress}
@@ -44,8 +42,7 @@ const LoginPage = () => {
      placeholder='email'
      autoFocus
     />
-    <input
-     id="password"
+    <input id="password"
      name='password'
      value={password}
      disabled={loginInProgress}
@@ -53,18 +50,16 @@ const LoginPage = () => {
      type='password'
      placeholder='password'
     />
-    <button
-     disabled={loginInProgress}
-     type='submit'>
+    <button disabled={loginInProgress} type='submit'>
      Login
     </button>
-    <div className='dark:text-gray-300  my-4 text-center text-gray-700'>or login with provider</div>
-    <button
-     type='button'
+    <div className='dark:text-gray-300  my-4 text-center text-gray-700'>
+     or login with provider
+    </div>
+    <button type='button'
      onClick={() => signIn("google", { callbackUrl: "/" })}
-     className=' flex gap-4 justify-center items-center'>
-     <Image
-      unoptimized={true}
+     className='flex gap-4 justify-center items-center'>
+     <Image unoptimized={true}
       src={"/img/google.png"}
       alt={"google icon"}
       width={28}
@@ -72,12 +67,10 @@ const LoginPage = () => {
      />
      Login with google
     </button>
-    <button
-     type='button'
+    <button type='button'
      onClick={() => signIn("github", { callbackUrl: "/" })}
-     className=' flex gap-4 justify-center items-center mt-2'>
-     <Image
-      src={"/img/github.png"}
+     className='flex gap-4 justify-center items-center'>
+     <Image src={"/img/github.png"}
       alt={"google icon"}
       width={28}
       height={28}
@@ -86,8 +79,7 @@ const LoginPage = () => {
     </button>
     <div className='text-center my-4 text-gray-700 dark:text-gray-300 border-t pt-4 border-gray-800 dark:border-gray-300'>
      Existing account?{" "}
-     <Link
-      className='   dark:text-amber-200 text-gray-800 underline'
+     <Link className=' dark:text-amber-200 text-gray-800 underline'
       href={"/register"}>
       Register here &raquo;
      </Link>

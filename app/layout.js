@@ -17,11 +17,11 @@ export default function RootLayout({ children, session }) {
  return (
   <html dir="ltr" className="scroll-smooth" lang="en">
    <ProviderTheme>
-    <body className={`scroll-smooth dark:bg-blue-950 ${inter.className}`}>
+    <body className={` scroll-smooth dark:bg-blue-950 ${inter.className}`}>
      <ProviderSession session={session}>
       <Toaster position='bottom-left' />
       <Aside />
-      <div className=" container">
+      <div className="containerr md:ml-80">
        <Header />
       </div>
       {children}

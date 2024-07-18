@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useState } from "react";
 import { FcRating } from "react-icons/fc";
 import Loading from "../../components/Loading";
+import Image from "next/image";
 
 
 export default function movies() {
@@ -43,26 +44,31 @@ export default function movies() {
  }
 
  return <>
-  <div className=" container">
-   <div className=" moviecards flex flex-col flex-left gap-2 w-100">
+  <div className=" containerr md:ml-80">
+   <div className=" moviecards flex flex-col gap-2 w-100">
     <div className=" flex flex-sb w-100 movietitle">
      <h2>List Of Published Movies</h2>
      <Link href="/addmovie"><button>Add Movies</button></Link>
     </div>
     {loading ? <Loading /> : <>
      {publishedMovies.map((movie) => {
-      return <div className=" moviecard" key={movie._id}>
-       <img src={movie.bgposter || "/img/noimage.jpg"} alt="movie" />
-       <div className=" moviecardinfo">
+      return <div className=" flex moviecard flex-col lg:flex-row h-auto lg:h-[20rem] w-full" key={movie._id}>
+       <div className="w-full h-full lg:ml-2 lg:flex lg:justify-center lg:items-center">
+        <Image alt={movie.title}
+         src={movie.bgposter || "/img/noimage.jpg"}
+         width={200} height={200}
+         className=" w-full max-h-full min-h-full lg:max-w-[40rem]  lg:rounded-2xl" />
+       </div>
+       <div className="moviecardinfo w-full">
         <dir>
          <h3>{movie.title}</h3>
          <p>{movie.category}</p>
         </dir>
-        <Link href="/">{movie.youtubelink}</Link>
-        <div>
-         <FcRating /> {movie.rating}
+        <Link target="_blank" href={movie.youtubelink}>{movie.youtubelink}</Link>
+        <div className="flex gap-[0.1rem] relative">
+         {movie.rating} <FcRating className=" absolute -top-3 left-4" />
         </div>
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-2 mt-2 w-full justify-center">
          <Link href={`/movies/edit/${movie._id}`}>
           <button>Update Movie</button>
          </Link>

@@ -2,7 +2,6 @@
 
 import Movie from "@/components/Movie"
 import axios from "axios"
-import Head from "next/head"
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
@@ -25,11 +24,8 @@ export default function EditProduct() {
 
  return <>
 
-  <Head>
-   <title>Update Movie</title>
-  </Head>
-  <div className=" blogpage">
-   <div className=" titledashboard container flex flex-sb">
+  <div className=" blogpage  md:ml-80">
+   <div className=" titledashboard containerr flex flex-sb">
     <div className=" mb-2">
      <h2>Edit Movie: <span>{movieInfo?.title}</span></h2>
      <h3>ADMIN PANEL</h3>

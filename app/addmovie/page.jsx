@@ -6,7 +6,7 @@ export default function addmovie() {
 
 
  return <>
-  <div className=" addblogpage container">
+  <div className=" addblogpage containerr md:ml-80">
    <div className=" blogsadd">
     <div className=" titledashboard w-100 flex flex-sb">
      <div>

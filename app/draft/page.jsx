@@ -64,7 +64,7 @@ export default function draft() {
 
 
  return <>
-  <div className="container">
+  <div className="containerr md:ml-80">
    <div className="moviecards flex flex-col flex-left gap-2 w-100">
     <div className="flex flex-sb w-100 movietitle">
      <h2>List Of Draft Movies</h2>
@@ -72,14 +72,14 @@ export default function draft() {
     </div>
     {loading ? <Spinner /> : <>
      {draftMovies.length === 0 ? <h2 className="flex w-100 flex-center text-center">Empty Draft</h2> : <>  {draftMovies.map((movie) => {
-      return <div className="moviecard" key={movie._id}>
-       <img src={movie.bgposter || "/img/noimage.jpg"} alt="movie" />
+      return <div className="moviecard  mobile:flex-col md:flex-row" key={movie._id}>
+       <Image alt={movie.title} src={movie.bgposter || "/img/noimage.jpg"} width={200} height={200} className=" mobile:w-full md:w-[23rem] md:rounded-2xl md:ml-2" />
        <div className="moviecardinfo">
         <div>
          <h3>{movie.title}</h3>
          <p>{movie.category}</p>
         </div>
-        <Link href="/">asda</Link>
+        <Link target="_blank" href={movie.youtubelink}>{movie.youtubelink}</Link>
         <div>
          <FcRating /> {movie.rating}
         </div>

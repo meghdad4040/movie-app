@@ -1,7 +1,6 @@
 "use client"
 
 import axios from "axios";
-import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -119,9 +118,6 @@ export default function Movie({
  const genres = ['Action', 'Adventure', 'Animation', 'Comedy', 'Drama', 'Crime', 'Fantasy', 'Horror', 'Romance', 'Thriller', 'Science_Fiction']
 
  return <>
-  <Head>
-   <title>Add Movie page</title>
-  </Head>
 
   <form className=" addmovieform" onSubmit={createMovie}>
 

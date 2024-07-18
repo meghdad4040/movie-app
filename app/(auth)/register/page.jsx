@@ -52,7 +52,7 @@ export default function Auth() {
     </div>
    </div>
   </div> */}
-  <section className='loginbox container'>
+  <section className='loginbox containerr md:ml-80'>
    <h1 className=' text-center text-best text-4xl mb-4'>Register</h1>
    {userCreated && (
     <div className=' my-4 text-center text-green-500'>
@@ -74,38 +74,35 @@ export default function Auth() {
     </div>
    )}
    <form
-    className=' w-[25rem] dark:bg-white/5 bg-black/35 rounded-xl p-6 flex flex-col gap-1 mx-auto'
+    className='text-xs lg:text-base max-w-[25rem] dark:bg-white/5 bg-black/35 rounded-xl p-6 flex flex-col gap-1 mx-auto'
     onSubmit={handelFormSubmit}>
-    <input
-     value={name}
+    <input value={name}
      name="name"
      disabled={creatingUser}
      onChange={e => setName(e.target.value)}
      type='text'
      placeholder='name'
     />
-    <input
-     value={email}
+    <input value={email}
      name="email"
      disabled={creatingUser}
      onChange={e => setEmail(e.target.value)}
      type='email'
      placeholder='email'
     />
-    <input
-     value={password}
+    <input value={password}
      name="password"
      disabled={creatingUser}
      onChange={e => setPassword(e.target.value)}
      type='password'
      placeholder='password'
     />
-    <button
-     disabled={creatingUser}
-     type='submit'>
+    <button disabled={creatingUser} type='submit'>
      Register
     </button>
-    <div className=' my-4 text-center text-gray-700 dark:text-gray-300'>------------ or login with provider ------------</div>
+    <div className=' my-4 text-center text-gray-700 dark:text-gray-300'>
+     ------------ or login with provider ------------
+    </div>
     <button
      onClick={() => signIn("google", { callbackUrl: "/" })}
      className=' flex gap-4 justify-center items-center'>

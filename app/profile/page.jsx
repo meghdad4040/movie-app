@@ -1,15 +1,11 @@
 
-import Head from "next/head";
 import { VscAccount } from "react-icons/vsc";
 
 export default function profile() {
 
 
  return <>
-  <Head>
-   <title>Profile page</title>
-  </Head>
-  <div className=" container">
+  <div className=" containerr  md:ml-80">
    <div className=" profilesettings">
     <div className=" dark:bg-blue-950 leftprofile_details flex">
      <img className="coderimg" src="/img/coder.jpg" alt="coder" />
@@ -19,7 +15,7 @@ export default function profile() {
        <h3>Meghdad Coder <br /> Web developer</h3>
       </div>
       <div className=" flex flex-sb mt-2 dark:*:text-gray-200">
-       <h3>Phone:</h3>
+       <h3>Phone: </h3>
        <input type="text" defaultValue={"+98-9355480436"} />
       </div>
       <div className=" mt-3 dark:*:text-gray-200">
